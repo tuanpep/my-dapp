@@ -1,4 +1,6 @@
 import React from 'react';
+import LeftSide from './LeftSide';
+import RightSide from './RightSide';
 import { Root } from './style';
 
 type Props = {};
@@ -6,9 +8,8 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <Root>
-      <div className="logo">
-        <img src="/LogoSVCoin.png" alt="Savvycom" />
-      </div>
+      <LeftSide />
+      <RightSide />
     </Root>
   );
 };
