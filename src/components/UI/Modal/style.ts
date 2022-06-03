@@ -14,16 +14,24 @@ export const ModalStyle = styled.div`
 `;
 
 export const ModalContentStyle = styled.div<ModalContentProps>`
-  width: ${props => props.width || '500px'};
-  height: 500px;
+  width: ${props => props.width || 'fit-content'};
+  min-height: 300px;
+  min-width: 375px;
   background-color: ${p => p.theme.colors.general.grey};
   border-radius: 32px;
   padding: 20px;
   position: relative;
 
+  .title {
+    border-bottom: 1px solid ${p => p.theme.colors.general.grey};
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
   .close-btn {
     position: absolute;
     top: 15px;
     right: 20px;
+    cursor: pointer;
   }
 `;

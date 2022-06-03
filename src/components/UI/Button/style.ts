@@ -15,4 +15,6 @@ export const Root = styled.button<PropButtonStyle>`
   min-width: 100px;
   border-radius: 16px;
   cursor: pointer;
+  border: 0;
+  outline: 0;
 `;

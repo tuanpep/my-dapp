@@ -1,13 +1,15 @@
 import { TypographyTypes } from 'constants/types';
 import { FC } from 'react';
+import { IColors } from '../../../../theme';
 import { PropsTypographyStyle, TypographyStyle } from './style';
 
 type Props = {
   type: TypographyTypes;
   children?: React.ReactNode;
+  color?: string;
 };
 
-const Typography: FC<Props> = ({ type, children }: Props) => {
+const Typography: FC<Props> = ({ type, children, color }: Props) => {
   let styleType: PropsTypographyStyle = {
     fontFamily: 'Space Grotesk',
     fontSize: 'xl',
@@ -62,6 +64,7 @@ const Typography: FC<Props> = ({ type, children }: Props) => {
       fontFamily={styleType.fontFamily}
       fontSize={styleType.fontSize}
       fontWeight={styleType.fontWeight}
+      color={color}
     >
       {children}
     </TypographyStyle>

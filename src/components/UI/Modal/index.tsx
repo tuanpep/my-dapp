@@ -20,9 +20,11 @@ const Modal = ({ width, children, isOpen, onClose }: ModalProps) => {
   return (
     <Overlay>
       <ModalStyle>
-        <ModalContentStyle width="500px">
+        <ModalContentStyle>
           <div className="title">
-            <Typography type="h1">Connect Wallet</Typography>
+            <Typography type="h1" color="#fff">
+              Connect Wallet
+            </Typography>
           </div>
           <div className="close-btn" onClick={onClose}>
             <CloseOutline size={28} color={'#fff'} />
