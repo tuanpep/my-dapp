@@ -1,10 +1,11 @@
-import Button from 'components/UI/Button';
 import Modal from 'components/UI/Modal';
 import Typography from 'components/UI/Typography';
 import { connectors } from 'lib/connector';
 import useAuth from 'lib/utils/useAuth';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
+import { setPublicAddressAction } from 'store/user/action';
+import { usePublicAddressManager } from 'store/user/hooks';
 import theme from '../../../theme';
 import { ConnectModalStyle, WalletItems } from './style';
 
@@ -15,9 +16,12 @@ type Props = {
 
 const ConnectModal = ({ toggleModal, isOpen }: Props) => {
   const { login, logout, account } = useAuth();
+  const [publicAddress, setPublicAddress] = usePublicAddressManager();
 
   useEffect(() => {
-    console.log('account', account);
+    if (account) {
+      setPublicAddress(account);
+    }
   }, [account]);
 
   const handleLogout = () => {
@@ -26,9 +30,6 @@ const ConnectModal = ({ toggleModal, isOpen }: Props) => {
 
   return (
     <Modal isOpen={isOpen} onClose={toggleModal}>
-      {/* <Button btn="light" onClick={() => login(connectors.injected)}>
-        Metamask
-      </Button> */}
       <ConnectModalStyle>
         <WalletItems onClick={() => login(connectors.injected)}>
           <Image src={'/icons/metamask.svg'} width={50} height={50} />
@@ -37,7 +38,7 @@ const ConnectModal = ({ toggleModal, isOpen }: Props) => {
           </Typography>
         </WalletItems>
 
-        <WalletItems>
+        <WalletItems onClick={() => login(connectors.walletConnect)}>
           <Image src={'/icons/walletconnect.svg'} width={50} height={50} />
           <Typography type="button" color={theme.colors.general.white}>
             WalletConnect

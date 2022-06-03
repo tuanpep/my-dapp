@@ -7,11 +7,12 @@ type Props = {
   btn: ButtonTypes;
   children: React.ReactNode;
   onClick?: () => void;
+  ref?: React.Ref<HTMLButtonElement>;
 };
 
-const Button = ({ btn, children, onClick }: Props) => {
+const Button = ({ btn, children, onClick, ref }: Props) => {
   return (
-    <Root btn={btn} onClick={onClick}>
+    <Root btn={btn} onClick={onClick} ref={ref}>
       <Typography type="button">{children}</Typography>
     </Root>
   );

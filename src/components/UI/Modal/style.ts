@@ -25,7 +25,7 @@ export const ModalContentStyle = styled.div<ModalContentProps>`
   .title {
     border-bottom: 1px solid ${p => p.theme.colors.general.grey};
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .close-btn {

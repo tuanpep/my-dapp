@@ -17,4 +17,5 @@ export const Root = styled.button<PropButtonStyle>`
   cursor: pointer;
   border: 0;
   outline: 0;
+  position: relative;
 `;
