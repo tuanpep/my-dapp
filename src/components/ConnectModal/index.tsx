@@ -33,14 +33,14 @@ const ConnectModal = ({ toggleModal, isOpen }: Props) => {
       <ConnectModalStyle>
         <WalletItems onClick={() => login(connectors.injected)}>
           <Image src={'/icons/metamask.svg'} width={50} height={50} />
-          <Typography type="button" color={theme.colors.general.white}>
+          <Typography type="body" color="white">
             Metamask
           </Typography>
         </WalletItems>
 
         <WalletItems onClick={() => login(connectors.walletConnect)}>
           <Image src={'/icons/walletconnect.svg'} width={50} height={50} />
-          <Typography type="button" color={theme.colors.general.white}>
+          <Typography type="body" color="white">
             WalletConnect
           </Typography>
         </WalletItems>

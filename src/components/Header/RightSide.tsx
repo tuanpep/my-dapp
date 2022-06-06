@@ -25,13 +25,18 @@ const RightSide = (props: Props) => {
   return (
     <>
       {account ? (
-        <PopoverCustom placement="bottom" content={<UserPopover />} trigger="click">
+        <PopoverCustom
+          placement="bottom"
+          content={<UserPopover />}
+          trigger="click"
+          overlayInnerStyle={{ padding: '0 !important' }}
+        >
           <Button btn="primary" onClick={() => setOpenPopover(!isOpenPopover)}>
             <>{useAccountEllipsis(account)}</>
           </Button>
         </PopoverCustom>
       ) : (
-        <Button btn="primary" onClick={toggleModal}>
+        <Button btn="primary" color="dark" onClick={toggleModal}>
           Connect Wallet
         </Button>
       )}

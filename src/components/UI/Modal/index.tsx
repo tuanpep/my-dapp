@@ -22,7 +22,7 @@ const Modal = ({ width, children, isOpen, onClose }: ModalProps) => {
       <ModalStyle>
         <ModalContentStyle>
           <div className="title">
-            <Typography type="h1" color="#fff">
+            <Typography type="h1" color="white">
               Connect Wallet
             </Typography>
           </div>

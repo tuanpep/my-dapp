@@ -12,10 +12,7 @@ export const Root = styled.div`
 `;
 
 export const PopoverCustom = styled(Popover)`
-  .ant-popover-arrow {
-    display: none;
-  }
-  .ant-popover-inner-content {
+  &.ant-popover-inner-content {
     padding: 0 !important;
   }
 `;

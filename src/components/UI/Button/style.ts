@@ -3,6 +3,7 @@ import theme from '../../../../theme';
 
 export type PropButtonStyle = {
   btn: string;
+  fullWidth?: boolean;
 };
 
 export const Root = styled.button<PropButtonStyle>`
@@ -18,4 +19,5 @@ export const Root = styled.button<PropButtonStyle>`
   border: 0;
   outline: 0;
   position: relative;
+  width: ${props => (props.fullWidth ? '100%' : 'auto')};
 `;

@@ -8,12 +8,15 @@ export type ColorPalettes =
   | 'pink'
   | 'yellow'
   | 'white'
-  | 'grey';
+  | 'grey'
+  | 'whiteTransparent';
 
 export type FontFamily = 'Space Grotesk' | 'Inter';
 export type FontWeight = 'semiBold' | 'regular' | 'medium' | 'bold';
 export type FontSize = 'sm' | 'md' | 'lg' | 'xl';
 export type ZIndex = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type Spacing = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type Screen = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
 
 export interface IColors {
   general: { [key in ColorPalettes]: string };
@@ -24,11 +27,15 @@ interface IFont {
   size: { [key in FontSize]: string };
 }
 type IZIndex = { [key in ZIndex]: number };
+type ISpacing = { [key in Spacing]: string };
+type IScreen = { [key in Screen]: string };
 
 export interface Theme {
   font: IFont;
   colors: IColors;
   zIndex: IZIndex;
+  spacing: ISpacing;
+  screen: IScreen;
 }
 
 const theme: Theme = {
@@ -44,6 +51,7 @@ const theme: Theme = {
       yellow: '#F6B24F',
       white: '#FFFFFF',
       grey: '#2A3138',
+      whiteTransparent: '#ffffffa5',
     },
   },
 
@@ -68,6 +76,24 @@ const theme: Theme = {
     md: 30,
     lg: 40,
     xl: 50,
+  },
+  spacing: {
+    none: '0',
+    xxs: '5px',
+    xs: '10px',
+    sm: '20px',
+    md: '30px',
+    lg: '40px',
+    xl: '60px',
+  },
+  screen: {
+    xs: '540px',
+    sm: '640px',
+    md: '1007px',
+    lg: '1100px',
+    xl: '1230px',
+    xxl: '1440px',
+    xxxl: '1920px',
   },
 };
 
