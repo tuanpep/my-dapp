@@ -1,5 +1,4 @@
 import { Web3ReactProvider } from '@web3-react/core';
-import 'antd/dist/antd.css';
 import { getLibrary } from 'lib/connector';
 import type { AppProps } from 'next/app';
 import { StrictMode } from 'react';

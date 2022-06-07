@@ -6,5 +6,4 @@ export const ContainerStyle = styled.div`
   min-height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 `;

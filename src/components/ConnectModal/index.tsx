@@ -1,4 +1,5 @@
 import Modal from 'components/UI/Modal';
+import Spacing from 'components/UI/Spacing';
 import Typography from 'components/UI/Typography';
 import { connectors } from 'lib/connector';
 import useAuth from 'lib/utils/useAuth';
@@ -7,7 +8,7 @@ import React, { useEffect } from 'react';
 import { setPublicAddressAction } from 'store/user/action';
 import { usePublicAddressManager } from 'store/user/hooks';
 import theme from '../../../theme';
-import { ConnectModalStyle, WalletItems } from './style';
+import { ConnectModalStyle, ModalTitle, WalletItems } from './style';
 
 type Props = {
   toggleModal: () => void;
@@ -15,7 +16,7 @@ type Props = {
 };
 
 const ConnectModal = ({ toggleModal, isOpen }: Props) => {
-  const { login, logout, account } = useAuth();
+  const { login, account } = useAuth();
   const [publicAddress, setPublicAddress] = usePublicAddressManager();
 
   useEffect(() => {
@@ -24,12 +25,13 @@ const ConnectModal = ({ toggleModal, isOpen }: Props) => {
     }
   }, [account]);
 
-  const handleLogout = () => {
-    logout();
-  };
-
   return (
-    <Modal isOpen={isOpen} onClose={toggleModal}>
+    <Modal isOpen={isOpen} onDismiss={toggleModal}>
+      <Spacing bottom="sm">
+        <ModalTitle>
+          <Typography type="h1">Connect wallet</Typography>
+        </ModalTitle>
+      </Spacing>
       <ConnectModalStyle>
         <WalletItems onClick={() => login(connectors.injected)}>
           <Image src={'/icons/metamask.svg'} width={50} height={50} />

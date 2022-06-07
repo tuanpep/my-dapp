@@ -5,9 +5,11 @@ import React from 'react';
 import theme from '../../../theme';
 import { MaxButton, SelectCurrencyStyle } from './style';
 
-type Props = {};
+type Props = {
+  openCurrencyModal: () => void;
+};
 
-const SelectCurrency = (props: Props) => {
+const SelectCurrency = ({ openCurrencyModal }: Props) => {
   return (
     <SelectCurrencyStyle>
       <div className="input-label">
@@ -20,7 +22,7 @@ const SelectCurrency = (props: Props) => {
           <input type="text" className="amount-input" placeholder="0.0" />
           <div className="select-currency">
             <MaxButton>Max</MaxButton>
-            <div className="select-btn">
+            <div className="select-btn" onClick={openCurrencyModal}>
               <Typography type="body-small">BNB</Typography>
               <ChevronDown size={16} color={theme.colors.general.white} />
             </div>

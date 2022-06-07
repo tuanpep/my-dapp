@@ -8,11 +8,7 @@ type Props = {};
 const Welcome = (props: Props) => {
   return (
     <WelcomeStyle>
-      <Container>
-        <Typography type="hero" color={theme.colors.general.white}>
-          Win 200% per year with Savvycoin
-        </Typography>
-      </Container>
+      <Container></Container>
     </WelcomeStyle>
   );
 };

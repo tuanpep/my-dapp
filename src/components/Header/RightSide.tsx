@@ -1,11 +1,11 @@
 import ConnectModal from 'components/ConnectModal';
 import Button from 'components/UI/Button';
+import Popover from 'components/UI/Popover';
 import UserPopover from 'components/UserPopover';
 import useAccountEllipsis from 'lib/utils/accountEllipsis';
 import React, { useEffect } from 'react';
 import { useConnectModalOpen, useConnectModalToggle } from 'store/application/hooks';
 import { usePublicAddress } from 'store/user/hooks';
-import { PopoverCustom } from './style';
 
 type Props = {};
 
@@ -25,16 +25,11 @@ const RightSide = (props: Props) => {
   return (
     <>
       {account ? (
-        <PopoverCustom
-          placement="bottom"
-          content={<UserPopover />}
-          trigger="click"
-          overlayInnerStyle={{ padding: '0 !important' }}
-        >
-          <Button btn="primary" onClick={() => setOpenPopover(!isOpenPopover)}>
+        <Popover content={<UserPopover />} show={isOpenPopover} placement="bottom">
+          <Button btn="primary" color="dark" onClick={() => setOpenPopover(!isOpenPopover)}>
             <>{useAccountEllipsis(account)}</>
           </Button>
-        </PopoverCustom>
+        </Popover>
       ) : (
         <Button btn="primary" color="dark" onClick={toggleModal}>
           Connect Wallet

@@ -1,13 +1,17 @@
 import { AddLiquidity } from 'components/LiquidityComponent';
 import styled from 'styled-components';
 
+export const AddLiquidityRoot = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
 export const LiquidityBox = styled.div`
   width: 384px;
   border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 32px;
   position: relative;
   margin-bottom: 6px;
-  top: -10%;
   margin-top: 80px;
   svg {
     cursor: pointer;
@@ -105,7 +109,19 @@ export const SelectCurrencyStyle = styled.div`
         display: flex;
         gap: 8px;
         cursor: pointer;
+        padding: 8px;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: ${props => props.theme.colors.general.dark};
+        }
       }
     }
   }
+`;
+
+export const WalletInfoStyle = styled.div`
+  background-color: ${props => props.theme.colors.general.grey};
+  border-radius: 32px;
+  color: ${props => props.theme.colors.general.white};
 `;

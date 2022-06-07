@@ -1,4 +1,3 @@
-import { Popover } from 'antd';
 import styled from 'styled-components';
 
 export const Root = styled.div`
@@ -9,10 +8,4 @@ export const Root = styled.div`
   padding: 22px 112px 22px 112px;
   align-items: center;
   justify-content: space-between;
-`;
-
-export const PopoverCustom = styled(Popover)`
-  &.ant-popover-inner-content {
-    padding: 0 !important;
-  }
 `;

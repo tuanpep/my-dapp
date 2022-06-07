@@ -22,3 +22,9 @@ export const WalletItems = styled.div`
     transition: background-color 0.3s ease-in-out;
   }
 `;
+
+export const ModalTitle = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`;

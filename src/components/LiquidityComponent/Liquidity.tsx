@@ -48,7 +48,7 @@ const AddLiquidity = (props: Props) => {
 
           <div className="content-footer">
             <Typography type="body-small" color="white">
-              Don't see a pool you joined?
+              Don&apos;t see a pool you joined?
             </Typography>
 
             <Spacing top="xs">
